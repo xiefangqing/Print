@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #print {
+            width: 100px;
+            height: 30px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 30px;
+            text-align: center;
+            background-color: yellowgreen;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="print">点击打印</div>
+    <!-- 打印内容区 -->
+    <div id="content">打印内容区测试</div>
+</body>
+<script type="module">
+    import {Print}  from './print.js'
+    console.log(Print)
+    document.getElementById('print').onclick = function() {
+        new Print({
+            dom: '#content'
+        })
+    }
+</script>
+</html>
